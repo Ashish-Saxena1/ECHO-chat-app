@@ -1,7 +1,8 @@
 import React from 'react'
 import { useThemeStore } from '../Store/useThemeStore'
 import { THEMES } from '../constants'
-import { Send } from 'lucide-react';
+import { Send, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const PREVIEWS_MESSAGES = [
     { id: 1, content: "hey how are you?", isSent: false },
@@ -11,13 +12,31 @@ const PREVIEWS_MESSAGES = [
 
 const Settingpage = () => {
     const { theme, setTheme } = useThemeStore()
+    const navigate = useNavigate();
     return (
         <div className="min-h-screen container mx-auto px-4 pt-20 max-w-5x1">
             <div className="space-y-6">
-                <div className="flex flex-col gap-1">
+                {/* <div className="flex flex-col gap-1">
                     <h2 className="text-lg font-semibold">Theme</h2>
                     <p className="text-sm text-base-content/70">Choose a theme for your chat interface</p>
+                </div> */}
+
+                <div className="flex justify-between items-center border-b border-base-300 pb-4">
+                    <div className="flex flex-col gap-1">
+                        <h2 className="text-xl font-bold">Theme</h2>
+                        <p className="text-sm text-base-content/70">Choose a theme for your chat interface</p>
+                    </div>
+                    <button 
+                        onClick={() => navigate("/")} 
+                        className="btn btn-ghost btn-sm sm:btn-md gap-2 flex items-center hover:bg-base-200 transition-all rounded-lg border border-base-300"
+                    >
+                        <ArrowLeft size={18} />
+                        <span className="hidden sm:inline">Back to Chat</span>
+                        <span className="inline sm:hidden">Back</span>
+                    </button>
                 </div>
+
+
 
                 <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
                     {THEMES.map((t) => (
