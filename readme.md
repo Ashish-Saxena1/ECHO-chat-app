@@ -1,4 +1,4 @@
-# 🔊 ECHO — Real-Time Chat App
+# ECHO — Real-Time Chat App
 
 ECHO is a full-stack, real-time messaging platform built on the **MERN stack** with **Socket.io**. It supports live one-on-one messaging, online presence tracking, image sharing, and profile customization — all wrapped in a responsive, themeable UI.
 
